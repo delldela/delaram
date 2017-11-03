@@ -19,7 +19,7 @@ class CreateRooms < ActiveRecord::Migration
       t.boolean :is_kitchen
       t.integer :price
       t.boolean :active
-      t.reference :user
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end

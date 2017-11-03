@@ -19,7 +19,7 @@ one:
   is_kitchen: false
   price: 1
   active: false
-  user: 
+  user_id: 
 
 two:
   home_type: MyString
@@ -40,4 +40,4 @@ two:
   is_kitchen: false
   price: 1
   active: false
-  user: 
+  user_id: 
