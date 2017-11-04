@@ -6,6 +6,12 @@
 		<div class="container">
 			<%= form_for @room do |f| %>
 				<div class="row">
+		                    <div class="form-group">
+		                        <label>Listings Name</label>
+		                        <%= f.text_field :listing_name, placeholder: "Titre de l'annonce", class: "form-control" %>
+		                    </div>
+		                </div>
+				<div class="row">
 					<div class="col-md-4 select">
 						<div class="form-group">
 							<label>Type of House</label>
@@ -29,6 +35,87 @@
 							prompt: "A sélectionner...", class: "form-control" %>
 					     </div>
 				    </div>
+				</div>	
+				<div class="row">
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Type of room</label>
+							<%= f.select :bed_room, [["1",1], ["2",2],
+							["3",3], ["4",4]], prompt: "A sélectionner...", class: "form-control" %>
+					     </div>
+				   </div>
+				<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Bathrooms?</label>
+							<%= f.select :accommodate, [["1",1], ["2",2],
+							["3", 3], ["4",4], ["5",5], ["6",6]],
+							prompt: "A sélectionner...", class: "form-control" %>
+					     </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label>Description</label>
+						<%= f.text_area :summary, placeholder: "Description", class: "form-control" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label>Address</label>
+						<%= f.text_field :address, placeholder: "Where is your home located?", class: "form-control" %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<%= f.check_box :is_wifi %> Wifi
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_tv %> Télévision
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_closet %> Closet
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_shampoo %> shampoo
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<%= f.check_box :is_kitchen %> kitchen
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_breakfast %> breakfast
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_heating %> heater
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_air %> airconditionar
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label>Price per night</label>
+							<div class="input-group">
+								<%= f.text_field :price, placeholder: "ex: 20 Per Night", class: "form-control" %>
+								
+								<div class="input-group-addon"> Dollars $
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+						<div class="form-group">
+							<%= f.check_box :active %> Accept with the terms and blah blah 
+						</div>	
+					</div>
+				<div class="actions">
+					<%= f.submit "Je valide mon annonce", class: "btn btn-primary"%>
 				</div>	
 			<% end %>
 		</div>
