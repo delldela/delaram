@@ -5,6 +5,8 @@
 	<div class="panel-body">
 		<div class="container">
 			<%= form_for @room do |f| %>
+				<%= render 'shared/errors' %>
+	
 				<div class="row">
 		                    <div class="form-group">
 		                        <label>Listings Name</label>
@@ -47,9 +49,9 @@
 				<div class="col-md-4 select">
 						<div class="form-group">
 							<label>Bathrooms?</label>
-							<%= f.select :accommodate, [["1",1], ["2",2],
+							<%= f.select :bath_room, [["1",1], ["2",2],
 							["3", 3], ["4",4], ["5",5], ["6",6]],
-							prompt: "A sélectionner...", class: "form-control" %>
+							prompt: "Select Bathroom Numbers", class: "form-control" %>
 					     </div>
 				    </div>
 				</div>
