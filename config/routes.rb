@@ -10,6 +10,7 @@ root 'pages#home'
 
 resources :users, only: [:show]
 resources :rooms
+resources :photos
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
