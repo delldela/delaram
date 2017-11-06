@@ -14,17 +14,17 @@ before_action :require_same_user, only: [:edit, :update]
 
 def create
        @room = current_user.rooms.build(room_params)
-if @room.save
+    if @room.save
     if params[:images]
         params[:images].each do |i|
             @room.photos.create(image: i)
         end
     end
     @photos = @room.photos
-           redirect_to edit_room_path(@room), notice:"Votre annonce a été ajouté avec succès"
+           redirect_to edit_room_path(@room), notice:"Your ad has been added successfully"
         else
             render :new
-end
+    end
 end
 
     def show
@@ -37,13 +37,11 @@ end
     
 def update
         if @room.update(room_params)
-if params[:images]
-            params[:images].each do |i|
-            @room.photos.create(image: i)
-        end
-end
-    
-    
+            if params[:images]
+               params[:images].each do |i|
+                 @room.photos.create(image: i)
+            end
+            end
     @photos = @room.photos
     redirect_to edit_room_path(@room), notice:"modification"
         else
@@ -64,7 +62,7 @@ private
     
     def require_same_user
         if current_user.id != @room.user_id
-            flash[:danger] = "Vous n'avez pas"
+            flash[:danger] = "You do not have"
     redirect_to root_path
         end
     end
