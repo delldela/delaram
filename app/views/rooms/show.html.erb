@@ -167,8 +167,7 @@
         <h3>A nearby...</h3>
  
  <div class="row">
- 
-     <% for room in @room.nearbys(2).limit(3) %>
+      <% for room in @room.nearbys(2).limit(5) %>
  
         <div class="col-md-4">
  
@@ -195,7 +194,6 @@
      <% end %>
  
  </div>
-        
         
     </div>
 </div>

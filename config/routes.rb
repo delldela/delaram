@@ -9,7 +9,10 @@ Rails.application.routes.draw do
 root 'pages#home'
 
 resources :users, only: [:show]
-resources :rooms
+resources :rooms, path: 'annonces' do
+  resources :reservations, only:[:create]
+  resources :reviews, only: [:create, :destory]
+end
 resources :photos
 
   # Example of regular route:
