@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   
   has_many :rooms
   has_many :reviews
+  has_many :reservations
 end
