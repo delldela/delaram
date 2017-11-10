@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109210831) do
+ActiveRecord::Schema.define(version: 20171110021919) do
 
   create_table "photos", force: :cascade do |t|
     t.integer  "room_id"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20171109210831) do
   end
 
   add_index "photos", ["room_id"], name: "index_photos_on_room_id"
+
+  create_table "reviews", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "star",       default: 1
+    t.integer  "room_id"
+    t.integer  "user_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "reviews", ["room_id"], name: "index_reviews_on_room_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "rooms", force: :cascade do |t|
     t.string   "home_type"
