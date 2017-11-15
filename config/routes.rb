@@ -11,6 +11,7 @@ root 'pages#home'
 resources :users, only: [:show]
 resources :rooms, path: 'annonces' do
   resources :reservations, only: [:create]
+  resources :reviews, only: [:create, :destroy]
 end
 resources :photos
 
