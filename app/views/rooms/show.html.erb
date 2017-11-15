@@ -130,7 +130,20 @@
                 </div>
             </div>
         </div>
-        
+        <div class="row">
+ 
+      <div class="col-md-12">
+             <h3>Commentaires <%= @room.average_rating %> (<%= @reviews.count %>)</h3>
+             <div class="container">
+                 <div>
+                     <%= render 'reviews/form' if @booked && !@hasReview %> 
+                 </div>
+                 <div>
+                     <%= render 'reviews/list' %>
+                 </div>
+            </div>
+         </div>
+  </div>
         <br>
     
     <!-- GOOGLE Adding the map on the show.html.erb page: -->
